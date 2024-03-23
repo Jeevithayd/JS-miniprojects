@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Return Negative</title>
+</head>
+<body>
+    <h2>Return Negative Value of a Number</h2>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number"><br><br>
+
+    <button onclick="returnNegative()">Return Negative</button><br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function returnNegative() {
+            const number = parseFloat(document.getElementById("numberInput").value);
+            const negativeNumber = -Math.abs(number); // Ensures that the returned value is negative
+
+            document.getElementById("result").innerText = "Negative value: " + negativeNumber;
+        }
+    </script>
+</body>
+</html>

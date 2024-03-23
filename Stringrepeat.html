@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Repeat</title>
+</head>
+<body>
+    <h2>Repeat a String</h2>
+    <label for="stringInput">Enter a string:</label>
+    <input type="text" id="stringInput" placeholder="Enter a string"><br><br>
+
+    <label for="repeatInput">Enter the number of times to repeat:</label>
+    <input type="number" id="repeatInput" placeholder="Enter a number"><br><br>
+
+    <button onclick="repeatString()">Repeat String</button><br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function repeatString() {
+            const inputString = document.getElementById("stringInput").value;
+            const repeatCount = parseInt(document.getElementById("repeatInput").value);
+            let repeatedString = "";
+
+            if (isNaN(repeatCount) || repeatCount < 0) {
+                document.getElementById("result").innerText = "Please enter a valid positive number.";
+                return;
+            }
+
+            for (let i = 0; i < repeatCount; i++) {
+                repeatedString += inputString;
+            }
+
+            document.getElementById("result").innerText = "Repeated string: " + repeatedString;
+        }
+    </script>
+</body>
+</html>

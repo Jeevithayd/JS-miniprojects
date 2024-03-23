@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Century Finder</title>
+</head>
+<body>
+    <h2>Find the Century of a Year</h2>
+    <label for="yearInput">Enter a year:</label>
+    <input type="text" id="yearInput" placeholder="Enter a year"><br><br>
+
+    <button onclick="findCentury()">Find Century</button><br><br>
+
+    <p id="centuryResult"></p>
+
+    <script>
+        function findCentury() {
+            const year = parseInt(document.getElementById("yearInput").value);
+            let century;
+
+            if (year % 100 === 0) {
+                century = year / 100;
+            } else {
+                century = Math.floor(year / 100) + 1;
+            }
+
+            document.getElementById("centuryResult").innerText = "The year " + year + " belongs to the " + century + "th century.";
+        }
+    </script>
+</body>
+</html>

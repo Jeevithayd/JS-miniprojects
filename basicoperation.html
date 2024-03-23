@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Operations</title>
+</head>
+<body>
+    <h2>Basic Arithmetic Operations</h2>
+    <label for="num1">Enter first number:</label>
+    <input type="text" id="num1" placeholder="Enter a number"><br><br>
+
+    <label for="num2">Enter second number:</label>
+    <input type="text" id="num2" placeholder="Enter a number"><br><br>
+
+    <button onclick="performOperations()">Perform Operations</button><br><br>
+
+    <p id="additionResult"></p>
+    <p id="subtractionResult"></p>
+    <p id="multiplicationResult"></p>
+    <p id="divisionResult"></p>
+
+    <script>
+        function performOperations() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            const addition = num1 + num2;
+            const subtraction = num1 - num2;
+            const multiplication = num1 * num2;
+            const division = num1 / num2;
+
+            document.getElementById("additionResult").innerText = "Addition: " + addition;
+            document.getElementById("subtractionResult").innerText = "Subtraction: " + subtraction;
+            document.getElementById("multiplicationResult").innerText = "Multiplication: " + multiplication;
+            document.getElementById("divisionResult").innerText = "Division: " + division;
+        }
+    </script>
+</body>
+</html>

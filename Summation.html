@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summation</title>
+</head>
+<body>
+    <h2>Summation of Numbers</h2>
+    <label for="startInput">Enter the start of the range:</label>
+    <input type="number" id="startInput" placeholder="Enter start"><br><br>
+
+    <label for="endInput">Enter the end of the range:</label>
+    <input type="number" id="endInput" placeholder="Enter end"><br><br>
+
+    <button onclick="computeSum()">Compute Sum</button><br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function computeSum() {
+            const start = parseInt(document.getElementById("startInput").value);
+            const end = parseInt(document.getElementById("endInput").value);
+            
+            if (isNaN(start) || isNaN(end) || start > end) {
+                document.getElementById("result").innerText = "Please enter valid start and end values.";
+                return;
+            }
+
+            let sum = 0;
+            for (let i = start; i <= end; i++) {
+                sum += i;
+            }
+
+            document.getElementById("result").innerText = "Summation from " + start + " to " + end + ": " + sum;
+        }
+    </script>
+</body>
+</html>
